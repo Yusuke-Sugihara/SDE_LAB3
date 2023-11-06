@@ -4,7 +4,6 @@ Please read this document carefully.
 ## BEFORE THE LAB
 
 ### VirtualBox and OVA image 
-### VirtualBox and OVA image 
 Prior to the lab, make sure to install VirtualBox and download the OVA image. The links for both are as follows:
 
 - [For M1/M2 Mac](link_here)
