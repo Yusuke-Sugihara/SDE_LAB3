@@ -25,7 +25,9 @@ Here are the links
 Process for logging in and subscribing to the APIS to get your API keys:
 ![Alt text](https://github.com/Yusuke-Sugihara/SDE_LAB3/blob/main/Images/Image_4.JPG)
 ![Alt text](https://github.com/Yusuke-Sugihara/SDE_LAB3/blob/main/Images/Image_5.JPG)
-![Alt text](https://github.com/Yusuke-Sugihara/SDE_LAB3/blob/main/Images/Image_6.JPG
-![Alt text]
-![Alt text]
-![Alt text]
+![Alt text](https://github.com/Yusuke-Sugihara/SDE_LAB3/blob/main/Images/Image_6.JPG)
+![Alt text](https://github.com/Yusuke-Sugihara/SDE_LAB3/blob/main/Images/Image_7.JPG)
+![Alt text](https://github.com/Yusuke-Sugihara/SDE_LAB3/blob/main/Images/Image_8.JPG)
+![Alt text](https://github.com/Yusuke-Sugihara/SDE_LAB3/blob/main/Images/Image_9.JPG)
+
+Following a similar process you can subscribe other two APIs and get the unique keys. If you don't subscribe you cannot test the endpoint.
