@@ -18,7 +18,7 @@ After creating an account, in order to use the APIs, you need to subscribe for e
 
 The process of subscribing for different APIs are same. As a demo, we have shown you the process for only one API service. You can follow the same process for other APIs. 
 Here are the links  
-1. [Humor API][(link_here)](https://rapidapi.com/humorapi/api/humor-jokes-and-memes/)
+1. [Humor API](https://rapidapi.com/humorapi/api/humor-jokes-and-memes/)
 2. [Microsoft Translator API](https://rapidapi.com/microsoft-azure-org-microsoft-cognitive-services/api/microsoft-translator-text)
 3. [Text to Speech API](https://rapidapi.com/yhwucss/api/text-to-speech53/)
 
