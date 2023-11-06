@@ -8,7 +8,7 @@ Node.js is a runtime environment that allows for the execution of JavaScript cod
 
 In the Virtual Machine, you can see the folder named Example 1. When you open the folder using vs code, you can see there are two Javascript files and one html file as shown in the figure. 
 
-![Alt text](./Image0.JPG)
+![Alt text](https://github.com/Yusuke-Sugihara/SDE_LAB3/blob/main/Images/Image_0.JPG))
 
 ### app.js: 
 
