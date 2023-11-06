@@ -239,7 +239,7 @@ Doing this should now display a message.
 After this, you can go to the browser and enter `http://localhost:5600` and refresh the page.
 
 
-![Alt text](./Image%202.JPG)
+![Alt text](https://github.com/Yusuke-Sugihara/SDE_LAB3/blob/main/Images/Image_2.JPG)
 
 You can enter a keyword that you want now, let's say `education`, and now you can see the joke:
 
