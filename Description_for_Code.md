@@ -26,7 +26,7 @@ It is the main HTML file of the web application and it defines the structure and
 
 After you load the Example 1 folder in the VS Code, open the `app.js` file, where you see the functions and code for making API requests to fetch the humor jokes. You can see all the codes are commented on, now we will uncomment them and discuss how the code works and how API request is made. Let’s get started:
 
-### index.html
+### Frontend (index.html)
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -51,7 +51,7 @@ A button element that the user can click to trigger a joke fetch. The `onclick` 
 
 This tag links an external JavaScript file named "script.js" to the HTML document. This file is expected to contain the `fetchJoke()` function that will be executed when the user clicks the "Get Joke" button.
 
-### app.js
+### Backend (app.js)
 ```javascript
 const express = require('express');
 const axios = require('axios');
@@ -92,10 +92,10 @@ app.get('/fetchJoke', async (req, res) => {
 ```
 `app.get()` defines a route for HTTP GET requests to the endpoint '/fetchJoke'. 
 
-- `async (Asynchronous Operations)`: Asynchronous operations in JavaScript let your program do things like talk to a database or another website while still being able to do other tasks at the same time. By using async, you tell JavaScript that you might have to wait for some actions to finish, like waiting for a joke to be fetched from another website. It's like saying, "I'll wait for this joke to arrive, but in the meantime, I can still listen to other requests or do other things."
-- __why do we use async??:__ You use asynchronous operations to perform tasks that take some time to complete, like fetching data from the internet, without stopping your program from doing other work while it waits for those tasks to finish.
+- **`async (Asynchronous Operations)`:** Asynchronous operations in JavaScript let your program do things like talk to a database or another website while still being able to do other tasks at the same time. By using async, you tell JavaScript that you might have to wait for some actions to finish, like waiting for a joke to be fetched from another website. It's like saying, "I'll wait for this joke to arrive, but in the meantime, I can still listen to other requests or do other things."
+- __why do we use async?:__ You use asynchronous operations to perform tasks that take some time to complete, like fetching data from the internet, without stopping your program from doing other work while it waits for those tasks to finish.
 
-- `(req, res)`: In Express, `req` handles incoming request details, and `res` is used to send back the server's response. Both are parameters in route callbacks for managing HTTP interactions.
+- **`(req, res)`:** In Express, `req` handles incoming request details, and `res` is used to send back the server's response. Both are parameters in route callbacks for managing HTTP interactions.
 
 `apiUrl` is set to the URL of an external joke API.
 
@@ -245,9 +245,10 @@ You can enter a keyword that you want now, let's say `education`, and now you ca
 
 ![Alt text](https://github.com/Yusuke-Sugihara/SDE_LAB3/blob/main/Images/Image_3.JPG)
 
-Suggested keywords: tech, apple, computer, knock, education, computer, football
+**Suggested keywords: tech, apple, computer, knock, education, computer, football**
 
 # DOCUMENTATION: Example 02
+
 ## Frontend (HTML)
 ```html
 <!DOCTYPE html>
@@ -358,11 +359,11 @@ app.post('/translateJoke', async (req, res) => {
     }
 });
 ``````
-Lets see the code step by step. 
+**Lets see the code step by step.** 
 ```javascript
 app.post('/translateJoke', async (req, res) => {
 ```
-Define a POST Route Handler: 
+**Define a POST Route Handler:**
 
 An asynchronous route handler is created for POST requests to the /translateJoke endpoint.
 
@@ -370,7 +371,7 @@ An asynchronous route handler is created for POST requests to the /translateJoke
 app.post('/translateJoke', async (req, res) => {
 const text = req.body.text;
 ```
-Extract Text from Request Body:
+**Extract Text from Request Body:**
 
 const text = req.body.text;: The text that needs to be translated is extracted from the incoming request's body.  
 
@@ -382,7 +383,7 @@ try {
     // Error handling code goes here
 }
 ````
-Try-Catch Block: 
+**Try-Catch Block:**
 
 The try block is used for handling asynchronous operations that may throw exceptions (errors). If an error is thrown inside the try block, execution is immediately shifted to the catch block.
 
@@ -392,14 +393,14 @@ The next line of code in the try block is an asynchronous operation that sends a
 const response = await axios.post('https://microsoft-translator-text.p.rapidapi.com/translate?to[0]=it&api-version=3.0&from=en&profanityAction=NoAction&textType=plain',
 [{ Text: text }],
 ``````
-Make a POST Request with Axios: 
+**Make a POST Request with Axios:**
 
 ```javascript
 const response = await axios.post('https://...');
 ``````
 An asynchronous POST request is made to the Microsoft Translator Text API using Axios. It sends the text to be translated into Italian (as indicated by to[0]=it), specifies the API version to use, instructs to leave any profanity as is, and states that the text is plain. The request includes the content type, which is JSON, and the special keys needed to authenticate with the API.
 
-Why do we use “POST”?
+**Why do we use “POST”?**
 
 We use POST for the /translateJoke endpoint to securely send the joke text in the request body for translation, which cannot be done with a GET request.
 
@@ -412,17 +413,17 @@ if (response && response.data && Array.isArray(response.data) && response.data.l
     res.status(500).json({ error: 'Unexpected API response' });
 }
 ``````
-Check the Response: 
+**Check the Response:** 
 An if-else block checks if the response from the API has the expected format, i.e., if it contains a non-empty array with a translations property.
 
 
-Send Back the Translated Text: 
+**Send Back the Translated Text:** 
 If the response is in the correct format, the translated text is sent back to the client in JSON format.
 
 ```javascript
 res.json({ translatedText });
 ``````
-Handle Unexpected API Response: 
+**Handle Unexpected API Response:**
  If the response format is not as expected, a 500 internal server error is returned with a message indicating an unexpected API response.
  ```javascript
 res.status(500).json({ error: 'Unexpected API response' });
@@ -443,21 +444,22 @@ Error Handling: The catch block handles any issues that might occur while trying
 
 This application serves as a bridge between the user and several online services. It fetches jokes, translates them, and provides an audible version of the joke. Let's dive into its components:
 
-1. Initialization
+**Initialization**
 
 In the initialization phase, we create an instance of an Express application, preparing it to handle the requests.
 
 ```javascript
 const app = express();
 ``````
-2. Waiting for Requests
+**Waiting for Requests**
 
 The application is set to "listen" on a specific port. When a user interacts with the web page, the application will receive this as a request on this port.
 
 ```javascript
 app.listen(PORT, () => {});
 ``````
-1. Frontend (HTML):
+
+**1. Frontend (HTML):**
 
 ```html
 <!DOCTYPE html>
@@ -473,7 +475,8 @@ app.listen(PORT, () => {});
 - `<html lang="en">`: The root element of an HTML page, with “en” specifying that the language is English.
 - `<head>`: Contains meta information and other resources like scripts and styles.
 - `<script src="client.js" defer></script>`: Links the JavaScript file (client.js) to the HTML. The defer attribute ensures that the script is executed after the HTML is parsed.
-2. Frontend (JavaScript):
+  
+**2. Frontend (JavaScript):**
 ```javascript
 async function fetchJokeTranslateAndPlay() {
     // Your code goes here
@@ -488,7 +491,8 @@ async function fetchJokeTranslateAndPlay() {
 - `encodeURIComponent(...)`: Encodes a URI component, ensuring characters like spaces, &, /, etc., are safely transmitted.
 - `await`: Waits for a Promise to resolve.
 - `.json()`: Parses the response body as JSON.
-3. Fetching a Joke 
+  
+**2.1. Fetching a Joke**
 When the user wants a joke, the application fetches it from the server:
 
 ```javascript
@@ -497,34 +501,34 @@ fetch(`http://localhost:5600/getJoke?prompt=${encodeURIComponent(prompt)}`);
 ``````
 The application communicates with an online joke service asking it for a joke based on the user's preference (e.g., "cats"). 
 
-4. Translating the Joke Once the joke is retrieved:
+**2.2. Translating the Joke Once the joke is retrieved:**
 
 ```javascript
 const breakSentenceResponse = await fetch(`http://localhost:5600/breakSentence?text=${encodeURIComponent(text)}`);
 ``````
 The joke, initially in English, is sent to a translation service to be converted into Italian
 
-5. Converting Text to Voice With the translated joke in hand:
+**2.3. Converting Text to Voice With the translated joke in hand:**
 ``````javascript
 const voiceResponse = await fetch(`http://localhost:5600/toVoice?text=${encodeURIComponent(breakSentenceData.translatedText)}&lang=it`);
 ``````
 The application communicates with another service that turns the Italian text into audible speech.
 
-6. Delivering the Audio To make the audio accessible:
+**2.4. Delivering the Audio To make the audio accessible:**
 ``````javascript
 audioElement.src = `http://localhost:5600/audioProxy?url=${encodeURIComponent(audioURL)}`;
 ``````
 The application prepares the audio to be played directly from the web page, ensuring the user can hear i
 
-7. Displaying the Translated Joke In addition to hearing the joke:
+**2.5. Displaying the Translated Joke In addition to hearing the joke:**
 ```javascript
 document.getElementById('translatedText').innerText = breakSentenceData.translatedText;
 ``````
 The Italian version of the joke is also displayed on the web page for the user to read.
 
-3. Backend (Node.js):
+**3. Backend (Node.js):**
 
-3.1. Importing Modules
+**3.1. Importing Modules**
 
 In Node.js, we import modules using the `require` function. Here, we're importing the `express` module, which is a web application framework for Node.js.
 
@@ -538,7 +542,7 @@ const express = require('express');
 - `cors`: Middleware to handle Cross-Origin Resource Sharing.
 - `path`: Utilities for working with file and directory paths.
 
-3.2. Middleware and Static Content Serving:
+**3.2. Middleware and Static Content Serving:**
 
 ```javascript
 const app = express();
@@ -551,9 +555,9 @@ app.use(express.static(path.join(__dirname)));
 - `express.static(...)`: Serves static files from a specified directory.
 - `path.join(...)`: Joins path segments together.
 
-3.3. Routes:
+**3.3. Routes:**
 
-1. Root Route (`/`):
+3.3.1. Root Route (`/`):
 ```javascript
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
@@ -562,7 +566,8 @@ app.get('/', (req, res) => {
 - `app.get(...)`: Defines an HTTP GET route in Express.
 - `req, res`: Represents the request and response objects in an Express route.
 - `res.sendFile(...)`: Sends a file as a response.
-2. Joke Route (`/getJoke`):
+  
+3.3.2. Joke Route (`/getJoke`):
 
 ```javascript
 app.get('/getJoke', async (req, res) => {
@@ -570,20 +575,22 @@ app.get('/getJoke', async (req, res) => {
 - `req.query`: Contains the parsed query-string from the URL.
 - `axios.request(...)`: Makes an HTTP request using axios.
 - `res.json(...)`: Sends a JSON response.
-3. Translation Route (`/breakSentence`):
+  
+3.3.3. Translation Route (`/breakSentence`):
 
 ```javascript
 app.get('/breakSentence', async (req, res) => {
 ```
 - `res.status(...)`: Sets the HTTP status code for the response.
-4. Text-to-Voice Route (`/toVoice`):
+  
+3.3.4. Text-to-Voice Route (`/toVoice`):
 
 ```javascript
 app.get('/toVoice', async (req, res) => {}
 ```
 - `axios.post(...)`: Makes an HTTP POST request using axios.
 
-5. Audio Proxy Route (`/audioProxy`):
+3.3.5. Audio Proxy Route (`/audioProxy`):
 
 ```javascript
 app.get('/audioProxy', async (req, res) => {
@@ -591,21 +598,21 @@ app.get('/audioProxy', async (req, res) => {
 - `axios.get(...)`: Makes an HTTP GET request using axios.
 - `.pipe(res)`: Streams data to the response.
 
-3.4. Server Initialization:
+**3.4. Server Initialization:**
 
 ```javascript
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
 ``````
-Client:
+## Client:
 - The HTML provides an input field for the user to enter a joke prompt.
 - Two buttons are present:
   1. To fetch a joke, translate it to Italian, and play it using a text-to-speech service.
   2. To fetch a joke and play it in English.
 - The fetched joke’s translation (if translated) is displayed in a paragraph element, and the audio playback controls are provided for the user to play the joke.
 
-Server (Node.js with Express):
+## Server (Node.js with Express):
 - Serves static files from the current directory.
 - Provides the root endpoint (`/`) to serve the HTML file.
 - Uses CORS middleware to handle cross-origin requests.
@@ -614,20 +621,27 @@ Server (Node.js with Express):
 - The `/toVoice` endpoint converts the provided text to voice (either in English or Italian) using an external text-to-speech API.
 - The `/audioProxy` endpoint acts as a proxy to fetch audio data from an external URL and stream it to the client.
 
-Comparison:
-1. HTML Structure & User Interaction:
+# Comparison:
+
+**1. HTML Structure & User Interaction:**
    - Here we do forking where we have two buttons (for different functionalities), a display area for translated text, and audio controls for playback.
-2. Server Functionality:
+     
+**2. Server Functionality:**
    - Before, we had endpoints for fetching a joke, translating a joke, and serving the JS function.
-   - Here this example has more diverse functionalities with endpoints for fetching a joke, translating text, converting text to speech, and proxying audio data. It also uses CORS to handle cross-origin requests.
-3. Integration:
+   - Here this example has more diverse functionalities with endpoints for fetching a joke, translating text, converting text to speech, and proxying audio data.  It also uses CORS to handle cross-origin requests.
+     
+**3. Integration:**
    - Before the JavaScript function is served directly from the server as a static file.
    - In this way, the client-side script is separated as “client.js”.
-4. Error Handling & Feedback:
+     
+**4. Error Handling & Feedback:**
    - Both ways handle errors by logging them to the console, but the second way provides a more comprehensive client-side error handling mechanism.
-5. Audio Playback:
+     
+**5. Audio Playback:**
    - This way enhances the user experience by not only translating the joke but also playing it audibly for the user in either English or Italian.
-6. API Calls:
+     
+**6. API Calls:**
    - Both methods interact with external APIs, but this has more interactions, including text-to-speech conversion and fetching audio data.
+     
 
 In summary, while all ways achieve the goal of fetching and translating jokes, this way offers a richer and more interactive user experience with added functionalities like text-to-speech and audio playback.
