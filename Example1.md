@@ -243,7 +243,7 @@ After this, you can go to the browser and enter `http://localhost:5600` and refr
 
 You can enter a keyword that you want now, let's say `education`, and now you can see the joke:
 
-![Alt text](./Image%203.JPG)
+![Alt text](https://github.com/Yusuke-Sugihara/SDE_LAB3/blob/main/Images/Image_3.JPG)
 
 Suggested keywords: tech, apple, computer, knock, education, computer, football
 
