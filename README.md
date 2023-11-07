@@ -6,7 +6,7 @@ Please read this document carefully.
 ### VirtualBox and OVA image 
 Prior to the lab, make sure to install VirtualBox and download the OVA image. The links for both are as follows:
 
-- [For M1/M2 Mac](https://drive.google.com/drive/folders/1u4zsOALoeyQMj57nwloiyVjxLmurecRN))
+- [For M1/M2 Mac](https://drive.google.com/drive/folders/1u4zsOALoeyQMj57nwloiyVjxLmurecRN)
 - [For Windows/macOS (Intel)](https://drive.google.com/drive/folders/1eZJKOwXMWPeBg7dEr6O5swpFzZraHSsc)
 
 ### SUBSCRIPTION of the APIs
