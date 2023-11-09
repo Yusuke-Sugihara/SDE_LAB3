@@ -6,7 +6,7 @@ Open Authorization, commonly known as OAuth, is an open standard protocol that a
 
 
 
-![Tokenization in APIs](https://github.com/Yusuke-Sugihara/SDE_LAB3/blob/main/Images/Image_Tokenization.jpg)
+![Tokenization in APIs](https://github.com/Yusuke-Sugihara/SDE_LAB3/blob/main/Images/Image_OAuth.jpg)
 
 ### Key Concepts in OAuth:
 ## Roles:
