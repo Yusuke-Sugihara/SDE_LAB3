@@ -25,7 +25,7 @@ It is the main HTML file of the web application and it defines the structure and
 ## Getting Started with the Example 01:
 
 After you load the Example 1 folder in the VS Code, open the `app.js` file, where you see the functions and code for making API requests to fetch the humor jokes. You can see all the codes are commented on, now we will uncomment them and discuss how the code works and how API request is made. Let’s get started:
-
+![Alt text](https://github.com/Yusuke-Sugihara/SDE_LAB3/blob/main/Images/Example%201.png)
 ### Frontend (index.html)
 ```html
 <!DOCTYPE html>
@@ -248,7 +248,7 @@ You can enter a keyword that you want now, let's say `water`, and now you can se
 **Suggested keywords: tech, apple, computer, knock, education, computer, football**
 
 # DOCUMENTATION: Example 02
-
+![Alt text](https://github.com/Yusuke-Sugihara/SDE_LAB3/blob/main/Images/Example%202.png)
 ## Frontend (HTML)
 ```html
 <!DOCTYPE html>
@@ -439,7 +439,7 @@ Error Handling: The catch block handles any issues that might occur while trying
 }
 ``````
 # DOCUMENTATION: Example 03
-
+![Alt text](https://github.com/Yusuke-Sugihara/SDE_LAB3/blob/main/Images/Example%203.jpg)
 ### An Overview 
 
 This application serves as a bridge between the user and several online services. It fetches jokes, translates them, and provides an audible version of the joke. Let's dive into its components:
