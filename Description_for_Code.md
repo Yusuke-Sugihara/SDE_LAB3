@@ -464,11 +464,20 @@ app.listen(PORT, () => {});
 ```html
 <!DOCTYPE html>
 <html lang="en">
+<html lang="en">
 <head>
-    <!-- Other head elements -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translation and Voice App</title>
     <script src="client.js" defer></script>
 </head>
-<!-- Rest of the HTML -->
+<body>
+    <input type="text" id="jokePrompt" placeholder="Enter joke prompt...">
+    <button onclick="fetchJokeTranslateAndPlay()">Get Joke and Play in Italian</button>
+    <button onclick="fetchJokeAndPlayEnglish()">Get Joke and Play in English</button>
+    <p id="translatedText"></p>
+    <audio id="translatedVoice" controls></audio>
+</body>
 </html>
 ``````
 - `<!DOCTYPE html>`: Declares the document to be HTML5.
