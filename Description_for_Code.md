@@ -241,7 +241,7 @@ After this, you can go to the browser and enter `http://localhost:5600` and refr
 
 ![Alt text](https://github.com/Yusuke-Sugihara/SDE_LAB3/blob/main/Images/Image_2.JPG)
 
-You can enter a keyword that you want now, let's say `education`, and now you can see the joke:
+You can enter a keyword that you want now, let's say `water`, and now you can see the joke:
 
 ![Alt text](https://github.com/Yusuke-Sugihara/SDE_LAB3/blob/main/Images/Image_3.JPG)
 
